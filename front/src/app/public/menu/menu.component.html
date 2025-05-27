@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <nav class="nav">
+        
+       <a class="nav-logo-link">
+            <i class="pi pi-bitcoin logo-img"></i>
+       </a>
+        <ul class="nav-menu">
+            <li>
+                <i class="pi pi-chart-bar link-icon"></i>
+                <a class="nav-link" [routerLink]="['/crypto/list']">Market tracker</a>
+            </li>
+            <li>
+                <i class="pi pi-chart-line link-icon"></i>
+                <a class="nav-link" [routerLink]="['/crypto/list']">Graphics</a>
+            </li>
+            <li>
+                <i class="pi pi-headphones link-icon"></i>
+                <a class="nav-link" [routerLink]="['/crypto/list']">Support</a>
+            </li>
+        </ul>
+
+        <a [routerLink]="['/auth/login']" class="nav-login"> <i class="pi pi-sign-in link-icon"></i> Log in</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link href="" rel="stylesheet">
+</head>
+<body>
+    <div class="container login-container">
+        <form [formGroup]="form" class="auth-form login-form" (ngSubmit)="loginUser()">
+            <h2 class="login-title">Log in now!</h2>
+            <div class="email-section">
+                <i class="pi pi-at input-icon" style="font-size: 1rem"></i>
+                <input type="email" @InputText formControlName="email" class="login-input" placeholder="Email">
+            </div>
+            <div class="pass-section">
+                <i class="pi pi-lock input-icon" style="font-size: 1rem"></i>
+                <input type="password" @InputText formControlName="password" class="login-input" placeholder="Password">
+            </div>
+
+            <button class="login-button">Log in</button>
+            <a [routerLink]="['/auth/register']" class="toregister-link" >You don't have an account yet? Sign up!</a>
+        </form>
+
+        <div *ngIf="submitted && message && error">
+            <p class="form-alert form-error">
+                {{message}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

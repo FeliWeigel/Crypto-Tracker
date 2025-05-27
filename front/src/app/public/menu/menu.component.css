@@ -1,0 +1,45 @@
+.nav {
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: rgb(27, 27, 40);
+    box-shadow: 0px 0px 12px -1px rgba(2, 125, 88, 0.169);
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-menu {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.logo-img {
+    color: rgb(2, 192, 135);
+    font-size: 2rem;
+}
+
+.nav-menu li, .nav-login {
+    display: flex;
+    align-items: center;
+    column-gap: .6rem;
+}
+
+.link-icon {
+    font-size: .95rem;
+    color: rgb(2, 169, 119);
+}
+
+.nav-link, .nav-login {
+    color: #ffffffa0;
+    transition: .4s;
+}
+
+.nav-link:hover, .nav-login:hover {
+    color: #fff;
+}

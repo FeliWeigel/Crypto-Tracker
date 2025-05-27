@@ -1,0 +1,91 @@
+.login-container {
+    background-color: rgb(27, 27, 40);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 2.1rem;
+    margin-top: 3rem;
+    box-shadow: 9px 10px 40px 1px rgb(5, 5, 26);
+    height: auto;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.login-title {
+    text-align: center;
+    position: relative;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.login-title::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    bottom: -2px;
+    background-color: rgb(2, 215, 151);
+}
+
+.login-input {
+    width: 100%;
+    background-color: rgba(39, 39, 52, 0.916);
+    padding: 13px 15px 13px 34px;
+    color: #fff;
+    border: 1px solid rgba(39, 39, 52, 0.916);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: .4s;
+}
+
+.login-input:focus {
+    border: 1px solid rgb(1, 113, 79);
+}
+
+.login-input::placeholder {
+    color: #ffffffd2;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    color: rgba(0, 248, 174, 0.434);
+}
+
+.email-section, .pass-section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-button {
+    width: 100%;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    background-color: rgb(1, 154, 108);
+    transition: .4s;
+}
+
+.login-button:hover {
+    background-color: rgb(2, 131, 92);
+}
+
+.toregister-link {
+    color: rgb(0, 142, 99);
+    font-size: .9rem;
+    transition: .4s;
+}
+
+.toregister-link:hover {
+    color: rgb(2, 215, 151);
+}

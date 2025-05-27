@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="" rel="stylesheet">
+</head>
+<body>
+    <div class="container register-container">
+        <form [formGroup]="form" (ngSubmit)="registerUser()" class="auth-form register-form">
+            <h2 class="register-title">Register now!</h2>
+            <div class="name-section">    
+                
+                <div>
+                    <div class="firstname">
+                        <input type="text" @InputText formControlName="firstname" class="register-input" placeholder="Firstname">
+                        <i class="pi pi-user input-icon" style="font-size: 1rem"></i>
+                    
+                    </div>
+                    <div *ngIf="submitted && form.get('lastname')?.errors?.['required']">
+                        <p class="form-error">
+                            El campo firstname es obligatorio
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="lastname">
+                        <i class="pi pi-users input-icon" style="font-size: 1rem"></i>
+                        <input type="text" @InputText formControlName="lastname" class="register-input" placeholder="Lastname">
+                    </div>
+                    <div *ngIf="submitted && form.get('lastname')?.errors?.['required']">
+                        <p class="form-error">
+                            El campo lastname es obligatorio
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="email-section">
+                <div class="email-main">
+                    <i class="pi pi-at input-icon" style="font-size: 1rem"></i>
+                    <input type="email" @InputText formControlName="email" class="register-input" placeholder="Email">
+                </div>
+                <div>
+                    <div *ngIf="submitted && form.get('lastname')?.errors?.['required']">
+                        <p class="form-error">
+                            El campo email es obligatorio
+                        </p>
+                    </div>
+                    <div *ngIf="submitted && form.get('lastname')?.errors?.['email']">
+                        <p class="form-error">
+                            El formato de email es incorrecto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pass-section">
+                <div class="password">
+                    <i class="pi pi-lock input-icon" style="font-size: 1rem"></i>
+                    <input type="password" @InputText formControlName="password" class="register-input r-input-password" placeholder="Password">
+                </div>
+                <div *ngIf="submitted && form.get('lastname')?.errors?.['required']">
+                    <p class="form-error">
+                        El campo password es obligatorio
+                    </p>
+                </div>
+                <span class="password-conditions">The password must be at least 6 characters long, capital letter and number.</span>
+            </div>
+
+            <button type="submit" class="register-button">Register</button>
+            <a  [routerLink]="['/auth/login']" class="tologin-link" >You already have an account? Sign in!</a>
+        </form>
+
+        <div *ngIf="submitted && message && error">
+            <p class="form-alert form-error">
+                {{message}}
+            </p>
+        </div>
+        <div *ngIf="submitted && message && !error">
+            <p class="form-alert form-success">
+                {{message}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

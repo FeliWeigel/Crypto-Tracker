@@ -1,0 +1,125 @@
+.details-container {
+    background-color: rgb(27, 27, 40);
+    padding-top: 5.3rem;
+    min-height: 100vh;
+    height: auto;
+}
+
+.details {
+    width:95%;
+    display: flex;
+}
+
+.details-info {
+    width: 50%;
+}
+
+.details-graph {
+    width: 50%;
+}
+
+.details-top {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem; 
+    margin-bottom: .3rem;
+}
+
+.details-name {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.3rem;
+    position: relative;
+}
+
+.details-name::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    width: 35px;
+    height: 2px;
+    background-color: rgb(2, 215, 151);
+}
+
+.details-img {
+    width: 10%;
+}
+
+.details-primary-info {
+    display: flex; 
+    gap: 2rem; 
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.details-mc-rank {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.845);
+    font-family: "Montserrat", sans-serif;
+}
+
+.details-price-24hs {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    margin-bottom: .2rem;
+}
+
+.details-divisor {
+    height: 1.4rem;
+    width: .7px;
+    background-color: rgba(255, 255, 255, 0.229);
+}
+
+.details-high-24hs, .details-low-24hs {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.details-high-24hs, .details-sentiment-pos {
+    color: rgb(6, 167, 6);
+}
+
+.details-low-24hs, .details-sentiment-neg {
+    color: rgb(224, 7, 7);
+}
+
+.details-total-volume, .details-market-cap {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.details-total-volume {
+    margin-bottom: .3rem;
+}
+
+.details-sentiment-title {
+    font-size: 1.37rem;
+    color: rgba(255, 255, 255, 0.96);
+    margin-bottom: .2rem;
+}
+
+.details-sentiments-info {
+    display: flex;
+    column-gap: .5rem;
+    margin-bottom: .5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.details-sentiment-pos, .details-sentiment-neg {
+    font-size: 1.1rem;
+}
+
+.pi-thumbs-up, .pi-thumbs-down {
+    margin-right: 5px;
+}
+
+.details-description {
+    width: 95%;
+    font-size: .82rem;
+    color: rgba(255, 255, 255, 0.753);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+</head>
+<body>
+    <div class="container list-container">
+        <app-menu></app-menu>
+        <h2 class="list-title">Market summary</h2>
+        <table class="crypto-table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Logo</th>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>24h Variation</th>
+                    <th>Market Cap</th>
+                    <th>Total Volume</th>
+                </tr>
+            </thead>
+            <tbody>   
+                <tr class="crypto-card" *ngFor="let crypto of cryptos" [routerLink]="[`/crypto/${crypto.id}/details`]">       
+                    <td style="border-top-left-radius: 5px;border-bottom-left-radius: 5px;">
+                        <img [src]="crypto.image" alt="{{ crypto.name }}" width="32" height="32" />
+                    </td>
+                    <td style="width: 15%; font-size: 1.05rem;">{{ crypto.name }}</td>
+                    <td style="font-weight: 500; font-size: 1.1rem;">{{ crypto.symbol | uppercase }}</td>
+                    <td style="width: 15%;">${{ crypto.current_price | number: '1.2-2' }}</td>
+                    <td [ngClass]="{'positive-var': crypto.price_change_percentage_24h >= 0, 'negative-var': crypto.price_change_percentage_24h < 0}">
+                        {{ crypto.price_change_percentage_24h | number: '1.2-2' }}%
+                    </td>
+                    <td >${{ crypto.market_cap | shortenNumber }}</td>
+                    <td style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;">${{ crypto.total_volume | shortenNumber }}</td>   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

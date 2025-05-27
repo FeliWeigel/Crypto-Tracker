@@ -1,0 +1,61 @@
+.list-container {
+    background-color: rgb(27, 27, 40);
+}
+
+.list-title {
+    color: #fff;
+    position: relative;
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    margin: 2rem .5rem .7rem .5rem;
+    align-self: flex-start;
+    font-weight: 400;
+}
+
+.list-title::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    left: 2px;
+    bottom: -2px;
+    background-color: rgb(2, 215, 151);
+}
+
+.crypto-table {
+    width: 90%;
+    border-spacing: 0 1.1rem;
+}
+
+.crypto-table th {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.crypto-table th, td {
+    text-align: center;
+}
+
+
+.crypto-table tbody tr   {
+    border-radius: 10xpx
+}
+
+.crypto-card {
+    cursor: pointer;
+}
+
+.crypto-card td {
+    background-color: rgba(37, 37, 49, 0.916);
+    padding: 1.2rem;
+}
+
+.positive-var {
+    color: rgb(0, 211, 0);
+}
+
+.negative-var {
+    color: rgb(246, 3, 3);
+}
+

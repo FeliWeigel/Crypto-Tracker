@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Details</title>
+</head>
+<body>
+    <div class="container details-container">
+        <app-menu></app-menu>
+        <div class="details">
+            <div class="details-info">
+                <div class="details-top">
+                    <img class="details-img" [src]="crypto.image.large" alt="crypto image"> 
+                    <h3 class="details-name">{{`${crypto.name.toLocaleUpperCase()}(${crypto.symbol.toLocaleUpperCase()})`}}</h3>
+                </div>
+                <div class="details-primary-info">
+                    <h4 class="details-mc-rank">Market cap rank: {{crypto.market_cap_rank}}</h4>
+                    <div>
+                        <h6 class="details-total-volume">Total volume: ${{crypto.market_data.total_volume.usd | number: '1.2-2'}}</h6> 
+                        <h6 class="details-market-cap">Market cap: ${{crypto.market_data.market_cap.usd | number: '1.2-2'}} </h6> 
+                    </div>
+                </div>
+                <div class="details-price-24hs">
+                    <h5 class="details-high-24hs"><i class="pi pi-arrow-up"></i> High 24hs: ${{crypto.market_data.high_24h.usd | number: '1.2-2'}}</h5>
+                    <span class="details-divisor"></span>
+                    <h5 class="details-low-24hs"><i class="pi pi-arrow-down"></i> Low 24hs: ${{crypto.market_data.low_24h.usd | number: '1.2-2'}} </h5> 
+                </div>
+                <div class="details-sentiment">
+                    <h6 class="details-sentiment-title">Market sentiment</h6>
+                    <div class="details-sentiments-info">
+                        <p class="details-sentiment-pos"><i class="pi pi-thumbs-up"></i>Positive sentiment: {{crypto.sentiment_votes_up_percentage}}%</p> 
+                        <span class="details-divisor"></span>
+                        <p class="details-sentiment-neg"><i class="pi pi-thumbs-down"></i>Negative sentiment: {{crypto.sentiment_votes_down_percentage}}%</p> 
+                    </div>
+                </div>
+                <p class="details-description">
+                    {{crypto.description.en}}
+                </p> 
+            </div>
+            <app-crypto-graph class="details-graph"></app-crypto-graph>
+        </div>
+        
+    </div>
+</body>
+</html>
