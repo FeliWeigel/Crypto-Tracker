@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CryptoGraphComponent } from '../crypto-graph/crypto-graph.component';
 import { CryptoService } from '../../../../services/crypto/crypto.service';
 import { ShortenNumberPipe } from '../../../../utils/shorten-number.pipe';
+
 @Component({
   selector: 'app-crypto-details',
   imports: [CommonModule, MenuComponent, CryptoGraphComponent, ShortenNumberPipe],
@@ -16,8 +17,8 @@ export class CryptoDetailsComponent implements OnInit, OnDestroy{
   private cryptoService = inject(CryptoService)
   cryptoId!: string
   crypto:any = []
-  constructor(){
 
+  constructor(){
   }
 
   ngOnInit(): void {

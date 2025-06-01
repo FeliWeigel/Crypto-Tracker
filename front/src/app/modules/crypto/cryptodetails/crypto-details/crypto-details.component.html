@@ -38,7 +38,39 @@
                     {{crypto.description.en}}
                 </p> 
             </div>
-            <app-crypto-graph class="details-graph"></app-crypto-graph>
+            <div class="details-t-info">
+                <app-crypto-graph class="details-graph"></app-crypto-graph>
+                <div class="prices-change">
+                    <p class="details-pchange">
+                        Price change 24hs: 
+                        <span 
+                            [ngClass]="{
+                                'positive': crypto.market_data.price_change_24h >= 0, 
+                                'negative': crypto.market_data.price_change_24h < 0
+                            }"
+                        >
+                            {{crypto.market_data.price_change_24h | number: '1.2-2'}} ({{crypto.market_data.price_change_percentage_24h_in_currency.usd | number: '1.2-2'}}%)
+                        </span>
+                    </p>
+                    <p class="details-pchange-1y">
+                        Price change (%) in 1 year:
+                        <span 
+                            [ngClass]="{
+                                'positive': crypto.market_data.price_change_24h >= 0, 
+                                'negative': crypto.market_data.price_change_24h < 0
+                            }"
+                        >
+                            {{crypto.market_data.price_change_percentage_1y | number: '1.2-2'}}%
+                        </span>
+                    </p>
+                </div>
+
+                <p class="details-t-description">
+                    {{crypto.name}} currently has a market cap of ${{crypto.market_data.market_cap.usd | number:'1.0-0'}}, ranking #{{crypto.market_cap_rank}} overall.  
+                    Over the past year, the market cap changed by {{crypto.market_data.market_cap_change_percentage_24h | number:'1.2-2'}}%.  
+                    Its total volume in the last 24h was ${{crypto.market_data.total_volume.usd | number:'1.0-0'}}, reflecting recent investor activity.
+                </p>
+            </div>
         </div>
         
     </div>

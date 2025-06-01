@@ -14,7 +14,7 @@
     width: 50%;
 }
 
-.details-graph {
+.details-t-info {
     width: 50%;
 }
 
@@ -79,11 +79,11 @@
     font-weight: 500;
 }
 
-.details-high-24hs, .details-sentiment-pos {
+.details-high-24hs, .details-sentiment-pos, .positive {
     color: rgb(6, 167, 6);
 }
 
-.details-low-24hs, .details-sentiment-neg {
+.details-low-24hs, .details-sentiment-neg, .negative {
     color: rgb(224, 7, 7);
 }
 
@@ -122,4 +122,19 @@
     width: 95%;
     font-size: .82rem;
     color: rgba(255, 255, 255, 0.753);
+}
+
+.prices-change {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.details-pchange, .details-pchange-1y {
+    color: rgb(255, 255, 255);
+}
+
+.details-t-description {
+    margin-top: .3rem;
+    color: rgba(255, 255, 255, 0.753);
+    font-size: .9rem;
 }
